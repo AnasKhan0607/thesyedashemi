@@ -122,8 +122,8 @@ thesyedashemi/
 
 - **Black**: `#000000` - Background
 - **Zinc-900**: `#18181b` - Cards/sections
-- **Gold-500**: `#D4A418` - Primary accent
-- **Gold-600**: `#B8860B` - Buttons/CTAs
+- **Gold-500**: `#F9F295` - Primary accent
+- **Gold-600**: `#E5DE7A` - Buttons/CTAs
 - **White**: `#ffffff` - Text
 - **Gray-300/400**: `#d1d5db/#9ca3af` - Secondary text
 
