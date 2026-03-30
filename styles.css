@@ -14,23 +14,27 @@ html {
     background: #000;
 }
 
+::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #D4B442, #9A7B0A);
+    background: linear-gradient(180deg, #D4A84B, #8C5F1E);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #E8CE6A, #B8960B);
+    background: linear-gradient(180deg, #E5C78E, #BF8A35);
 }
 
 /* Gold text glow effect */
 .gold-glow {
-    text-shadow: 0 0 20px rgba(184, 150, 11, 0.4);
+    text-shadow: 0 0 20px rgba(212, 168, 75, 0.4);
 }
 
 /* Metallic gold text gradient */
 .gold-metallic {
-    background: linear-gradient(135deg, #E8CE6A 0%, #C9A227 25%, #9A7B0A 50%, #C9A227 75%, #E8CE6A 100%);
+    background: linear-gradient(135deg, #E5C78E 0%, #D4A84B 25%, #A67428 50%, #D4A84B 75%, #E5C78E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -38,12 +42,12 @@ html {
 
 /* Metallic gold button/element */
 .gold-metallic-bg {
-    background: linear-gradient(135deg, #D4B442 0%, #B8960B 40%, #7B6208 60%, #B8960B 80%, #D4B442 100%);
+    background: linear-gradient(135deg, #D4A84B 0%, #BF8A35 40%, #8C5F1E 60%, #BF8A35 80%, #D4A84B 100%);
 }
 
 /* Selection color */
 ::selection {
-    background: rgba(184, 150, 11, 0.3);
+    background: rgba(212, 168, 75, 0.3);
     color: #fff;
 }
 
@@ -91,7 +95,7 @@ html {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #C9A227, #E8CE6A, #C9A227);
+    background: linear-gradient(90deg, #BF8A35, #E5C78E, #BF8A35);
     transition: width 0.3s ease;
 }
 
@@ -134,7 +138,7 @@ button:active {
 
 .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(184, 150, 11, 0.2);
+    box-shadow: 0 12px 40px rgba(212, 168, 75, 0.2);
 }
 
 /* Fade in animation */

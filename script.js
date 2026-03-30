@@ -177,11 +177,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navbar) {
         const updateNavbar = () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('bg-black/95');
-                navbar.classList.remove('bg-black/90');
+                navbar.classList.add('bg-matte-black/98');
+                navbar.classList.remove('bg-matte-black/95');
             } else {
-                navbar.classList.add('bg-black/90');
-                navbar.classList.remove('bg-black/95');
+                navbar.classList.add('bg-matte-black/95');
+                navbar.classList.remove('bg-matte-black/98');
             }
         };
         
