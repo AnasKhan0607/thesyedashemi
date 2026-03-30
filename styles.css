@@ -15,22 +15,35 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #F9F295;
+    background: linear-gradient(180deg, #D4B442, #9A7B0A);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #FDFDE8;
+    background: linear-gradient(180deg, #E8CE6A, #B8960B);
 }
 
 /* Gold text glow effect */
 .gold-glow {
-    text-shadow: 0 0 20px rgba(249, 242, 149, 0.3);
+    text-shadow: 0 0 20px rgba(184, 150, 11, 0.4);
+}
+
+/* Metallic gold text gradient */
+.gold-metallic {
+    background: linear-gradient(135deg, #E8CE6A 0%, #C9A227 25%, #9A7B0A 50%, #C9A227 75%, #E8CE6A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Metallic gold button/element */
+.gold-metallic-bg {
+    background: linear-gradient(135deg, #D4B442 0%, #B8960B 40%, #7B6208 60%, #B8960B 80%, #D4B442 100%);
 }
 
 /* Selection color */
 ::selection {
-    background: rgba(249, 242, 149, 0.3);
+    background: rgba(184, 150, 11, 0.3);
     color: #fff;
 }
 
@@ -78,7 +91,7 @@ html {
     left: 0;
     width: 0;
     height: 2px;
-    background: #F9F295;
+    background: linear-gradient(90deg, #C9A227, #E8CE6A, #C9A227);
     transition: width 0.3s ease;
 }
 
@@ -121,7 +134,7 @@ button:active {
 
 .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(249, 242, 149, 0.15);
+    box-shadow: 0 12px 40px rgba(184, 150, 11, 0.2);
 }
 
 /* Fade in animation */
