@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Syed Ashemi | Transform Your Physique</title>
+    <meta name="description" content="1-on-1 online fitness coaching. Build your dream physique with science-based training and nutrition.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FFF9E6',
+                            100: '#FFF0C2',
+                            200: '#FFE08A',
+                            300: '#FFD052',
+                            400: '#FFC01A',
+                            500: '#D4A418',
+                            600: '#B8860B',
+                            700: '#8B6914',
+                            800: '#5C4A1A',
+                            900: '#2E2510',
+                        }
+                    },
+                    fontFamily: {
+                        'cinzel': ['Cinzel', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white font-inter">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gold-600/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="font-cinzel text-xl sm:text-2xl font-bold text-gold-500">THE SYED ASHEMI</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-300 hover:text-gold-500 transition">Services</a>
+                    <a href="#transformations" class="text-gray-300 hover:text-gold-500 transition">Results</a>
+                    <a href="#about" class="text-gray-300 hover:text-gold-500 transition">About</a>
+                    <a href="#programs" class="text-gray-300 hover:text-gold-500 transition">Programs</a>
+                    <a href="#apply" class="bg-gold-600 hover:bg-gold-500 text-black font-semibold px-6 py-2 rounded transition">Apply Now</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gold-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-t border-gold-600/20">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#services" class="block text-gray-300 hover:text-gold-500 transition">Services</a>
+                <a href="#transformations" class="block text-gray-300 hover:text-gold-500 transition">Results</a>
+                <a href="#about" class="block text-gray-300 hover:text-gold-500 transition">About</a>
+                <a href="#programs" class="block text-gray-300 hover:text-gold-500 transition">Programs</a>
+                <a href="#apply" class="block bg-gold-600 hover:bg-gold-500 text-black font-semibold px-6 py-2 rounded text-center transition">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+        <!-- Background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black to-zinc-900"></div>
+        <!-- Greek pattern overlay -->
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0h60v60H0V0zm30 30v30h30V30H30zm0-30v30h30V0H30z&quot; fill=&quot;%23D4A418&quot; fill-opacity=&quot;1&quot;/%3E%3C/svg%3E');"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Greek decorative element -->
+            <div class="flex justify-center mb-6">
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
+            </div>
+            
+            <h1 class="font-cinzel text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span class="text-white">FORGE YOUR</span><br>
+                <span class="text-gold-500">LEGENDARY PHYSIQUE</span>
+            </h1>
+            
+            <p class="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Science-based 1-on-1 coaching to build the body of a Greek god. 
+                Custom training. Precision nutrition. Real results.
+            </p>
+            
+            <!-- Video Placeholder -->
+            <div class="max-w-4xl mx-auto mb-10 rounded-lg overflow-hidden border-2 border-gold-600/30 shadow-2xl shadow-gold-500/10">
+                <div class="aspect-video bg-zinc-900 flex items-center justify-center relative group cursor-pointer" id="video-placeholder">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="relative z-10 text-center">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gold-600 flex items-center justify-center group-hover:bg-gold-500 transition transform group-hover:scale-110">
+                            <svg class="w-8 h-8 text-black ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <p class="text-gold-500 font-semibold">WATCH THE FREE TRAINING</p>
+                        <p class="text-gray-400 text-sm">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#apply" class="inline-block bg-gold-600 hover:bg-gold-500 text-black font-bold text-lg px-10 py-4 rounded transition transform hover:scale-105 shadow-lg shadow-gold-500/25">
+                START YOUR TRANSFORMATION →
+            </a>
+            
+            <!-- Stats -->
+            <div class="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="font-cinzel text-3xl sm:text-4xl font-bold text-gold-500">100+</div>
+                    <div class="text-gray-400 text-sm">Transformations</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-cinzel text-3xl sm:text-4xl font-bold text-gold-500">5+</div>
+                    <div class="text-gray-400 text-sm">Years Experience</div>
+                </div>
+                <div class="text-center">
+                    <div class="font-cinzel text-3xl sm:text-4xl font-bold text-gold-500">100%</div>
+                    <div class="text-gray-400 text-sm">Science-Based</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-zinc-900 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-transparent h-32"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-gold-500">THE SPARTAN</span> PROTOCOL
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    A comprehensive 1-on-1 coaching system designed to sculpt your ideal physique through science and discipline.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-black border border-gold-600/20 rounded-lg p-8 hover:border-gold-500 transition group">
+                    <div class="w-14 h-14 bg-gold-600/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-600/30 transition">
+                        <svg class="w-7 h-7 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-gold-500 mb-3">CUSTOM WORKOUT PLANS</h3>
+                    <p class="text-gray-400">Personalized training programs built around your goals, schedule, and equipment. No cookie-cutter templates.</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-black border border-gold-600/20 rounded-lg p-8 hover:border-gold-500 transition group">
+                    <div class="w-14 h-14 bg-gold-600/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-600/30 transition">
+                        <svg class="w-7 h-7 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-gold-500 mb-3">PRECISION NUTRITION</h3>
+                    <p class="text-gray-400">Science-backed meal strategies for lean bulking. Macro coaching that fuels muscle growth while staying shredded.</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-black border border-gold-600/20 rounded-lg p-8 hover:border-gold-500 transition group">
+                    <div class="w-14 h-14 bg-gold-600/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-600/30 transition">
+                        <svg class="w-7 h-7 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-gold-500 mb-3">LEAN BULK SYSTEM</h3>
+                    <p class="text-gray-400">Build muscle without the fat. Strategic surplus eating combined with progressive overload for maximum gains.</p>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-black border border-gold-600/20 rounded-lg p-8 hover:border-gold-500 transition group">
+                    <div class="w-14 h-14 bg-gold-600/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-600/30 transition">
+                        <svg class="w-7 h-7 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-gold-500 mb-3">DAILY/WEEKLY CHECK-INS</h3>
+                    <p class="text-gray-400">Consistent accountability and progress tracking. I'm in your corner every step of the way.</p>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="bg-black border border-gold-600/20 rounded-lg p-8 hover:border-gold-500 transition group">
+                    <div class="w-14 h-14 bg-gold-600/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-600/30 transition">
+                        <svg class="w-7 h-7 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-gold-500 mb-3">STRICT TIMELINE</h3>
+                    <p class="text-gray-400">Clear deadlines and milestones. We set a target date for your transformation and build backwards from there.</p>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="bg-black border border-gold-600/20 rounded-lg p-8 hover:border-gold-500 transition group">
+                    <div class="w-14 h-14 bg-gold-600/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-600/30 transition">
+                        <svg class="w-7 h-7 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-gold-500 mb-3">1-ON-1 MENTORSHIP</h3>
+                    <p class="text-gray-400">Direct access to me. Not a group chat or generic support—personalized guidance for your unique journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformations Section -->
+    <section id="transformations" class="py-24 bg-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-white">LEGENDARY</span> <span class="text-gold-500">TRANSFORMATIONS</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Real people. Real results. See what's possible when you commit to the process.
+                </p>
+            </div>
+            
+            <!-- Transformation Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Transformation 1 -->
+                <div class="bg-zinc-900 border border-gold-600/20 rounded-lg overflow-hidden group">
+                    <div class="relative">
+                        <!-- Before/After Slider -->
+                        <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                            <div class="slider-container relative w-full h-full">
+                                <!-- Before Image Placeholder -->
+                                <div class="absolute inset-0 bg-zinc-800 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <div class="text-6xl mb-2">📷</div>
+                                        <p class="text-gray-500">Before Photo</p>
+                                    </div>
+                                </div>
+                                <!-- After Image Placeholder (slides over) -->
+                                <div class="slider-after absolute inset-0 bg-zinc-700 flex items-center justify-center" style="clip-path: inset(0 50% 0 0);">
+                                    <div class="text-center">
+                                        <div class="text-6xl mb-2">💪</div>
+                                        <p class="text-gray-400">After Photo</p>
+                                    </div>
+                                </div>
+                                <!-- Slider Handle -->
+                                <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Labels -->
+                        <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+                        <div class="absolute top-4 right-4 bg-gold-600 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold-500 text-lg">★★★★★</div>
+                        </div>
+                        <p class="text-gray-300 italic mb-4">"Add your client testimonial here. This is where their transformation story and experience will go."</p>
+                        <p class="text-gold-500 font-semibold">— Client Name</p>
+                        <p class="text-gray-500 text-sm">12 Week Transformation</p>
+                    </div>
+                </div>
+                
+                <!-- Transformation 2 -->
+                <div class="bg-zinc-900 border border-gold-600/20 rounded-lg overflow-hidden group">
+                    <div class="relative">
+                        <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                            <div class="slider-container relative w-full h-full">
+                                <div class="absolute inset-0 bg-zinc-800 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <div class="text-6xl mb-2">📷</div>
+                                        <p class="text-gray-500">Before Photo</p>
+                                    </div>
+                                </div>
+                                <div class="slider-after absolute inset-0 bg-zinc-700 flex items-center justify-center" style="clip-path: inset(0 50% 0 0);">
+                                    <div class="text-center">
+                                        <div class="text-6xl mb-2">💪</div>
+                                        <p class="text-gray-400">After Photo</p>
+                                    </div>
+                                </div>
+                                <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+                        <div class="absolute top-4 right-4 bg-gold-600 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold-500 text-lg">★★★★★</div>
+                        </div>
+                        <p class="text-gray-300 italic mb-4">"Add your client testimonial here. This is where their transformation story and experience will go."</p>
+                        <p class="text-gold-500 font-semibold">— Client Name</p>
+                        <p class="text-gray-500 text-sm">16 Week Transformation</p>
+                    </div>
+                </div>
+                
+                <!-- Transformation 3 -->
+                <div class="bg-zinc-900 border border-gold-600/20 rounded-lg overflow-hidden group">
+                    <div class="relative">
+                        <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                            <div class="slider-container relative w-full h-full">
+                                <div class="absolute inset-0 bg-zinc-800 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <div class="text-6xl mb-2">📷</div>
+                                        <p class="text-gray-500">Before Photo</p>
+                                    </div>
+                                </div>
+                                <div class="slider-after absolute inset-0 bg-zinc-700 flex items-center justify-center" style="clip-path: inset(0 50% 0 0);">
+                                    <div class="text-center">
+                                        <div class="text-6xl mb-2">💪</div>
+                                        <p class="text-gray-400">After Photo</p>
+                                    </div>
+                                </div>
+                                <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-black/70 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+                        <div class="absolute top-4 right-4 bg-gold-600 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="text-gold-500 text-lg">★★★★★</div>
+                        </div>
+                        <p class="text-gray-300 italic mb-4">"Add your client testimonial here. This is where their transformation story and experience will go."</p>
+                        <p class="text-gold-500 font-semibold">— Client Name</p>
+                        <p class="text-gray-500 text-sm">8 Week Transformation</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#apply" class="inline-block border-2 border-gold-600 text-gold-500 hover:bg-gold-600 hover:text-black font-bold px-8 py-3 rounded transition">
+                    BE THE NEXT SUCCESS STORY →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-zinc-900 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold-600/5 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image placeholder -->
+                <div class="relative">
+                    <div class="aspect-[3/4] bg-zinc-800 rounded-lg border-2 border-gold-600/30 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🏛️</div>
+                            <p class="text-gray-500">Your Photo Here</p>
+                        </div>
+                    </div>
+                    <!-- Decorative frame -->
+                    <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-gold-600/30 rounded-lg -z-10"></div>
+                </div>
+                
+                <!-- Content -->
+                <div>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                        <span class="text-white">THE MAN</span><br>
+                        <span class="text-gold-500">BEHIND THE METHOD</span>
+                    </h2>
+                    
+                    <div class="space-y-6 text-gray-300 text-lg">
+                        <p>
+                            I wasn't always in shape. I know what it's like to look in the mirror and not recognize yourself—to feel like your body isn't capable of what you see others achieving.
+                        </p>
+                        <p>
+                            My transformation wasn't overnight. It took years of learning, experimenting, and pushing through plateaus. But that journey gave me something invaluable: <span class="text-gold-500 font-semibold">a deep understanding of what actually works.</span>
+                        </p>
+                        <p>
+                            With a background in biology, I approach fitness from a scientific lens. No bro-science. No fads. Just proven methods backed by research and refined through real-world results.
+                        </p>
+                        <p>
+                            Today, I've helped hundreds of men and women transform their physiques—busy professionals, complete beginners, and everyone in between. Now it's your turn.
+                        </p>
+                    </div>
+                    
+                    <!-- Credentials -->
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="bg-black/50 border border-gold-600/20 rounded-lg p-4">
+                            <div class="text-gold-500 font-cinzel font-bold text-xl">5+ Years</div>
+                            <div class="text-gray-400 text-sm">Training Experience</div>
+                        </div>
+                        <div class="bg-black/50 border border-gold-600/20 rounded-lg p-4">
+                            <div class="text-gold-500 font-cinzel font-bold text-xl">Biology</div>
+                            <div class="text-gray-400 text-sm">Science Background</div>
+                        </div>
+                        <div class="bg-black/50 border border-gold-600/20 rounded-lg p-4">
+                            <div class="text-gold-500 font-cinzel font-bold text-xl">100+</div>
+                            <div class="text-gray-400 text-sm">Clients Transformed</div>
+                        </div>
+                        <div class="bg-black/50 border border-gold-600/20 rounded-lg p-4">
+                            <div class="text-gold-500 font-cinzel font-bold text-xl">Science</div>
+                            <div class="text-gray-400 text-sm">Based Methods</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section (Workout Plan for Sale) -->
+    <section id="programs" class="py-24 bg-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-white">THE</span> <span class="text-gold-500">FOUNDATION</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Not ready for 1-on-1 coaching? Start with my proven workout blueprint.
+                </p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gradient-to-b from-zinc-900 to-black border-2 border-gold-600/40 rounded-2xl overflow-hidden relative">
+                    <!-- Featured badge -->
+                    <div class="absolute top-0 right-0 bg-gold-600 text-black font-bold px-4 py-2 rounded-bl-lg text-sm">
+                        DIGITAL DOWNLOAD
+                    </div>
+                    
+                    <div class="p-8 sm:p-10">
+                        <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-gold-500 mb-4">THE SPARTAN STARTER PLAN</h3>
+                        <p class="text-gray-300 text-lg mb-6">
+                            A sample of my training methodology. Perfect for beginners or anyone looking to level up their routine with science-backed programming.
+                        </p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-300">
+                                <svg class="w-5 h-5 text-gold-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Week-by-week progressive workout structure
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <svg class="w-5 h-5 text-gold-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Exercise tutorials & form guides
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <svg class="w-5 h-5 text-gold-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Basic nutrition guidelines
+                            </li>
+                            <li class="flex items-center text-gray-300">
+                                <svg class="w-5 h-5 text-gold-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Instant PDF download
+                            </li>
+                        </ul>
+                        
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <span class="text-gray-500 line-through text-lg">$XX</span>
+                                <span class="font-cinzel text-4xl font-bold text-gold-500 ml-2">$XX</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="block w-full bg-gold-600 hover:bg-gold-500 text-black font-bold text-lg py-4 rounded text-center transition transform hover:scale-[1.02]">
+                            GET THE PLAN →
+                        </a>
+                        <p class="text-gray-500 text-sm text-center mt-4">Coming Soon — Price TBD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section id="apply" class="py-24 bg-zinc-900 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent h-32 bottom-0 top-auto"></div>
+        
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    <span class="text-white">BEGIN YOUR</span><br>
+                    <span class="text-gold-500">TRANSFORMATION</span>
+                </h2>
+                <p class="text-gray-400 text-lg">
+                    Fill out the application below and I'll reach out to you personally.
+                </p>
+            </div>
+            
+            <form id="application-form" class="bg-black border border-gold-600/30 rounded-2xl p-8 sm:p-10">
+                <div class="space-y-6">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-gold-500 font-semibold mb-2">Full Name *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required
+                            class="w-full bg-zinc-900 border border-gold-600/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold-500 transition"
+                            placeholder="Your name"
+                        >
+                    </div>
+                    
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-gold-500 font-semibold mb-2">Email Address *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            class="w-full bg-zinc-900 border border-gold-600/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold-500 transition"
+                            placeholder="your@email.com"
+                        >
+                    </div>
+                    
+                    <!-- Instagram -->
+                    <div>
+                        <label for="instagram" class="block text-gold-500 font-semibold mb-2">Instagram Handle *</label>
+                        <input 
+                            type="text" 
+                            id="instagram" 
+                            name="instagram" 
+                            required
+                            class="w-full bg-zinc-900 border border-gold-600/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold-500 transition"
+                            placeholder="@yourusername"
+                        >
+                    </div>
+                    
+                    <!-- Fitness Level -->
+                    <div>
+                        <label for="fitness-level" class="block text-gold-500 font-semibold mb-2">Current Fitness Level *</label>
+                        <select 
+                            id="fitness-level" 
+                            name="fitness_level" 
+                            required
+                            class="w-full bg-zinc-900 border border-gold-600/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition"
+                        >
+                            <option value="" disabled selected>Select your level</option>
+                            <option value="beginner">Beginner — New to working out</option>
+                            <option value="intermediate">Intermediate — Some experience</option>
+                            <option value="advanced">Advanced — Consistent training</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Main Goal -->
+                    <div>
+                        <label for="goal" class="block text-gold-500 font-semibold mb-2">Main Goal *</label>
+                        <select 
+                            id="goal" 
+                            name="goal" 
+                            required
+                            class="w-full bg-zinc-900 border border-gold-600/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 transition"
+                        >
+                            <option value="" disabled selected>Select your goal</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="muscle-gain">Muscle Gain</option>
+                            <option value="both">Both — Lean Bulk</option>
+                            <option value="recomposition">Body Recomposition</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Additional Info -->
+                    <div>
+                        <label for="message" class="block text-gold-500 font-semibold mb-2">Tell me about yourself (optional)</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="4"
+                            class="w-full bg-zinc-900 border border-gold-600/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-gold-500 transition resize-none"
+                            placeholder="Your current situation, challenges, what you're hoping to achieve..."
+                        ></textarea>
+                    </div>
+                </div>
+                
+                <button 
+                    type="submit" 
+                    class="w-full mt-8 bg-gold-600 hover:bg-gold-500 text-black font-bold text-lg py-4 rounded-lg transition transform hover:scale-[1.02] flex items-center justify-center"
+                >
+                    <span id="submit-text">SUBMIT APPLICATION</span>
+                    <svg id="submit-spinner" class="hidden animate-spin ml-2 h-5 w-5 text-black" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </button>
+                
+                <p class="text-gray-500 text-sm text-center mt-4">
+                    I'll personally reach out via Instagram within 24-48 hours.
+                </p>
+            </form>
+            
+            <!-- Success Message -->
+            <div id="success-message" class="hidden bg-black border border-gold-500 rounded-2xl p-8 sm:p-10 text-center">
+                <div class="text-6xl mb-4">⚡</div>
+                <h3 class="font-cinzel text-2xl font-bold text-gold-500 mb-4">APPLICATION RECEIVED!</h3>
+                <p class="text-gray-300">
+                    Thank you for applying. I'll review your application and reach out to you on Instagram within 24-48 hours.
+                </p>
+                <p class="text-gold-500 font-semibold mt-4">Your transformation begins now.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gold-600/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo -->
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="font-cinzel text-2xl font-bold text-gold-500">THE SYED ASHEMI</a>
+                    <p class="text-gray-500 text-sm mt-1">Forge Your Legendary Physique</p>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex space-x-6">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/thesyedashemi/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gold-500 transition">
+                        <span class="sr-only">Instagram</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@thesyedashemi" target="_blank" rel="noopener" class="text-gray-400 hover:text-gold-500 transition">
+                        <span class="sr-only">TikTok</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                        </svg>
+                    </a>
+                    <!-- Twitter (placeholder) -->
+                    <a href="#" class="text-gray-400 hover:text-gold-500 transition">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <!-- YouTube (placeholder) -->
+                    <a href="#" class="text-gray-400 hover:text-gold-500 transition">
+                        <span class="sr-only">YouTube</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gold-600/10 text-center">
+                <p class="text-gray-500 text-sm">
+                    © 2026 The Syed Ashemi. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

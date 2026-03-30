@@ -1,0 +1,178 @@
+/* Custom styles for The Syed Ashemi */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #B8860B;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D4A418;
+}
+
+/* Gold text glow effect */
+.gold-glow {
+    text-shadow: 0 0 20px rgba(212, 164, 24, 0.3);
+}
+
+/* Selection color */
+::selection {
+    background: rgba(212, 164, 24, 0.3);
+    color: #fff;
+}
+
+/* Greek meander pattern (optional) */
+.greek-border {
+    border-image: repeating-linear-gradient(
+        90deg,
+        #D4A418 0px,
+        #D4A418 10px,
+        transparent 10px,
+        transparent 20px
+    ) 1;
+}
+
+/* Transformation slider styles */
+.transformation-slider {
+    touch-action: none;
+    user-select: none;
+}
+
+.transformation-slider .slider-handle {
+    z-index: 10;
+}
+
+.transformation-slider .slider-handle:hover {
+    transform: scaleY(1.02);
+}
+
+/* Before/After images - when real images are added */
+.transformation-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Animated underline on hover */
+.hover-underline {
+    position: relative;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #D4A418;
+    transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+
+/* Form focus states */
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 0 2px rgba(212, 164, 24, 0.2);
+}
+
+/* Button press effect */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Hero section parallax-like effect */
+@media (min-width: 768px) {
+    .hero-parallax {
+        background-attachment: fixed;
+    }
+}
+
+/* Card hover lift effect */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(212, 164, 24, 0.15);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Stagger animation delay utility */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Mobile menu transition */
+#mobile-menu {
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .font-cinzel {
+        letter-spacing: 0.02em;
+    }
+}
+
+/* Form validation styles */
+input:invalid:not(:placeholder-shown),
+select:invalid:not([value=""]) {
+    border-color: #ef4444;
+}
+
+input:valid:not(:placeholder-shown),
+select:valid:not([value=""]) {
+    border-color: #22c55e;
+}
+
+/* Disabled state for form submission */
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
