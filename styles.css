@@ -211,3 +211,27 @@ button:disabled {
     opacity: 0.7;
     cursor: not-allowed;
 }
+
+/* Swiper Carousel Styles */
+.transformations-swiper {
+    padding-bottom: 60px;
+}
+
+.transformations-swiper .swiper-pagination-bullet {
+    background: #333;
+    opacity: 1;
+}
+
+.transformations-swiper .swiper-pagination-bullet-active {
+    background: #C9A962;
+}
+
+.transformations-swiper .swiper-button-next,
+.transformations-swiper .swiper-button-prev {
+    color: #C9A962;
+}
+
+.transformations-swiper .swiper-button-next:after,
+.transformations-swiper .swiper-button-prev:after {
+    font-size: 24px;
+}

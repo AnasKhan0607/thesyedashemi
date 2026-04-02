@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -247,130 +250,149 @@
                 </p>
             </div>
             
-            <!-- Transformation Cards -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Transformation 1 -->
-                <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden group">
-                    <div class="relative">
-                        <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
-                            <div class="slider-container relative w-full h-full">
-                                <!-- Before Image -->
-                                <img src="images/transformations/Client1_Before.jpg" alt="Client 1 Before" class="absolute inset-0 w-full h-full object-cover">
-                                <!-- After Image (slides over) -->
-                                <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="images/transformations/Client1_After.jpg" alt="Client 1 After" class="w-full h-full object-cover">
-                                </div>
-                                <!-- Slider Handle -->
-                                <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
-                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
-                                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
-                                        </svg>
+            <!-- Transformation Carousel -->
+            <div class="swiper transformations-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden">
+                            <div class="relative">
+                                <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                                    <div class="slider-container relative w-full h-full">
+                                        <img src="images/transformations/Client1_Before.jpg" alt="Client 1 Before" class="absolute inset-0 w-full h-full object-cover">
+                                        <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+                                            <img src="images/transformations/Client1_After.jpg" alt="Client 1 After" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                                                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+                                <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+                            </div>
+                            <div class="p-4 text-center">
+                                <div class="text-gold-500 text-lg mb-2">★★★★★</div>
+                                <p class="text-gold-500 font-semibold">12 Week Transformation</p>
                             </div>
                         </div>
-                        <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
-                        <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center mb-2">
-                            <div class="text-gold-500 text-lg">★★★★★</div>
-                        </div>
-                        <p class="text-gold-500 font-semibold">Client Transformation</p>
-                        <p class="text-gray-500 text-sm">12 Week Program</p>
-                    </div>
-                </div>
-                
-                <!-- Transformation 2 -->
-                <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden group">
-                    <div class="relative">
-                        <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
-                            <div class="slider-container relative w-full h-full">
-                                <img src="images/transformations/Client2_Before.jpg" alt="Client 2 Before" class="absolute inset-0 w-full h-full object-cover">
-                                <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="images/transformations/Client2_After.jpg" alt="Client 2 After" class="w-full h-full object-cover">
-                                </div>
-                                <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
-                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
-                                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
-                                        </svg>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden">
+                            <div class="relative">
+                                <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                                    <div class="slider-container relative w-full h-full">
+                                        <img src="images/transformations/Client2_Before.jpg" alt="Client 2 Before" class="absolute inset-0 w-full h-full object-cover">
+                                        <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+                                            <img src="images/transformations/Client2_After.jpg" alt="Client 2 After" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                                                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+                                <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+                            </div>
+                            <div class="p-4 text-center">
+                                <div class="text-gold-500 text-lg mb-2">★★★★★</div>
+                                <p class="text-gold-500 font-semibold">16 Week Transformation</p>
                             </div>
                         </div>
-                        <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
-                        <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center mb-2">
-                            <div class="text-gold-500 text-lg">★★★★★</div>
-                        </div>
-                        <p class="text-gold-500 font-semibold">Client Transformation</p>
-                        <p class="text-gray-500 text-sm">16 Week Program</p>
-                    </div>
-                </div>
-                
-                <!-- Transformation 3 -->
-                <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden group">
-                    <div class="relative">
-                        <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
-                            <div class="slider-container relative w-full h-full">
-                                <img src="images/transformations/Client3_Before.jpg" alt="Client 3 Before" class="absolute inset-0 w-full h-full object-cover">
-                                <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="images/transformations/Client3_After.jpg" alt="Client 3 After" class="w-full h-full object-cover">
-                                </div>
-                                <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
-                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
-                                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
-                                        </svg>
+                    
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden">
+                            <div class="relative">
+                                <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                                    <div class="slider-container relative w-full h-full">
+                                        <img src="images/transformations/Client3_Before.jpg" alt="Client 3 Before" class="absolute inset-0 w-full h-full object-cover">
+                                        <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+                                            <img src="images/transformations/Client3_After.jpg" alt="Client 3 After" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                                                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+                                <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+                            </div>
+                            <div class="p-4 text-center">
+                                <div class="text-gold-500 text-lg mb-2">★★★★★</div>
+                                <p class="text-gold-500 font-semibold">10 Week Transformation</p>
                             </div>
                         </div>
-                        <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
-                        <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center mb-2">
-                            <div class="text-gold-500 text-lg">★★★★★</div>
-                        </div>
-                        <p class="text-gold-500 font-semibold">Client Transformation</p>
-                        <p class="text-gray-500 text-sm">10 Week Program</p>
-                    </div>
-                </div>
-                
-                <!-- Transformation 4 -->
-                <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden group">
-                    <div class="relative">
-                        <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
-                            <div class="slider-container relative w-full h-full">
-                                <img src="images/transformations/Client4_Before.jpg" alt="Client 4 Before" class="absolute inset-0 w-full h-full object-cover">
-                                <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
-                                    <img src="images/transformations/Client4_After.jpg" alt="Client 4 After" class="w-full h-full object-cover">
-                                </div>
-                                <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
-                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
-                                        <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path>
-                                        </svg>
+                    
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden">
+                            <div class="relative">
+                                <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                                    <div class="slider-container relative w-full h-full">
+                                        <img src="images/transformations/Client4_Before.jpg" alt="Client 4 Before" class="absolute inset-0 w-full h-full object-cover">
+                                        <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+                                            <img src="images/transformations/Client4_After.jpg" alt="Client 4 After" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                                                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+                                <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+                            </div>
+                            <div class="p-4 text-center">
+                                <div class="text-gold-500 text-lg mb-2">★★★★★</div>
+                                <p class="text-gold-500 font-semibold">8 Week Transformation</p>
                             </div>
                         </div>
-                        <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
-                        <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
                     </div>
-                    <div class="p-4">
-                        <div class="flex items-center mb-2">
-                            <div class="text-gold-500 text-lg">★★★★★</div>
+                    
+                    <!-- Slide 5 (New) -->
+                    <div class="swiper-slide">
+                        <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden">
+                            <div class="relative">
+                                <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                                    <div class="slider-container relative w-full h-full">
+                                        <img src="images/transformations/Client5_Before.jpg" alt="Client 5 Before" class="absolute inset-0 w-full h-full object-cover">
+                                        <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+                                            <img src="images/transformations/Client5_After.jpg" alt="Client 5 After" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                                                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+                                <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+                            </div>
+                            <div class="p-4 text-center">
+                                <div class="text-gold-500 text-lg mb-2">★★★★★</div>
+                                <p class="text-gold-500 font-semibold">12 Week Transformation</p>
+                            </div>
                         </div>
-                        <p class="text-gold-500 font-semibold">Client Transformation</p>
-                        <p class="text-gray-500 text-sm">8 Week Program</p>
                     </div>
                 </div>
+                <!-- Navigation arrows -->
+                <div class="swiper-button-next !text-gold-500"></div>
+                <div class="swiper-button-prev !text-gold-500"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination !bottom-0 !relative !mt-8"></div>
             </div>
             
             <div class="text-center mt-12">
@@ -694,5 +716,42 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Transformations Carousel
+        const transformationsSwiper = new Swiper('.transformations-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+                1280: {
+                    slidesPerView: 4,
+                    spaceBetween: 24,
+                },
+            },
+        });
+    </script>
 </body>
 </html>
