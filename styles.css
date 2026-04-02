@@ -1,9 +1,14 @@
 /* Custom styles for The Syed Ashemi */
-/* Updated to match architectarmy.com aesthetic */
+/* Matching architectarmy.com aesthetic - pure black + gold smoke */
 
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Force pure black background */
+body {
+    background-color: #000000 !important;
 }
 
 /* Custom scrollbar */
@@ -22,6 +27,22 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #E8D5A3, #C9A962);
+}
+
+/* Animated smoke effect */
+@keyframes smoke-drift {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(20px) translateY(-10px);
+        opacity: 0.4;
+    }
+}
+
+.smoke-animate {
+    animation: smoke-drift 8s ease-in-out infinite;
 }
 
 /* Gold text glow effect */

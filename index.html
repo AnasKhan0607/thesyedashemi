@@ -83,16 +83,19 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-        <!-- Background gradient -->
-        <div class="absolute inset-0 bg-gradient-to-b from-matte-black via-matte-black to-matte-card"></div>
-        <!-- Greek pattern overlay -->
-        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0h60v60H0V0zm30 30v30h30V30H30zm0-30v30h30V0H30z&quot; fill=&quot;%23C9A962&quot; fill-opacity=&quot;1&quot;/%3E%3C/svg%3E');"></div>
+        <!-- Pure black background -->
+        <div class="absolute inset-0 bg-black"></div>
+        
+        <!-- Golden smoke/fog effect - left side -->
+        <div class="absolute left-0 top-1/4 w-1/2 h-96 opacity-30 pointer-events-none" style="background: radial-gradient(ellipse at left, rgba(201, 169, 98, 0.4) 0%, rgba(201, 169, 98, 0.1) 40%, transparent 70%); filter: blur(60px);"></div>
+        
+        <!-- Golden smoke/fog effect - right side -->
+        <div class="absolute right-0 top-1/3 w-1/2 h-96 opacity-30 pointer-events-none" style="background: radial-gradient(ellipse at right, rgba(201, 169, 98, 0.4) 0%, rgba(201, 169, 98, 0.1) 40%, transparent 70%); filter: blur(60px);"></div>
+        
+        <!-- Subtle center glow -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(201, 169, 98, 0.2) 0%, transparent 50%); filter: blur(80px);"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <!-- Greek decorative element -->
-            <div class="flex justify-center mb-6">
-                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent"></div>
-            </div>
             
             <h1 class="font-cinzel text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 <span class="text-white">FORGE YOUR</span><br>
