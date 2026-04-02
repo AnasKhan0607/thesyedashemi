@@ -1,4 +1,5 @@
 /* Custom styles for The Syed Ashemi */
+/* Updated to match architectarmy.com aesthetic */
 
 /* Smooth scrolling */
 html {
@@ -14,40 +15,36 @@ html {
     background: #000;
 }
 
-::-webkit-scrollbar-track {
-    background: #0A0A0A;
-}
-
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #D4A84B, #8C5F1E);
+    background: linear-gradient(180deg, #C9A962, #8B7340);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #E5C78E, #BF8A35);
+    background: linear-gradient(180deg, #E8D5A3, #C9A962);
 }
 
 /* Gold text glow effect */
 .gold-glow {
-    text-shadow: 0 0 20px rgba(212, 168, 75, 0.4);
+    text-shadow: 0 0 20px rgba(201, 169, 98, 0.4);
 }
 
-/* Metallic gold text gradient */
+/* Metallic gold text gradient - matching architectarmy */
 .gold-metallic {
-    background: linear-gradient(135deg, #E5C78E 0%, #D4A84B 25%, #A67428 50%, #D4A84B 75%, #E5C78E 100%);
+    background: linear-gradient(135deg, #E8D5A3 0%, #C9A962 25%, #8B7340 50%, #C9A962 75%, #E8D5A3 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-/* Metallic gold button/element */
+/* Metallic gold button/element - matching architectarmy */
 .gold-metallic-bg {
-    background: linear-gradient(135deg, #D4A84B 0%, #BF8A35 40%, #8C5F1E 60%, #BF8A35 80%, #D4A84B 100%);
+    background: linear-gradient(135deg, #C9A962 0%, #B8954D 40%, #8B7340 60%, #B8954D 80%, #C9A962 100%);
 }
 
 /* Selection color */
 ::selection {
-    background: rgba(212, 168, 75, 0.3);
+    background: rgba(201, 169, 98, 0.3);
     color: #fff;
 }
 
@@ -55,8 +52,8 @@ html {
 .greek-border {
     border-image: repeating-linear-gradient(
         90deg,
-        #D4A418 0px,
-        #D4A418 10px,
+        #C9A962 0px,
+        #C9A962 10px,
         transparent 10px,
         transparent 20px
     ) 1;
@@ -95,7 +92,7 @@ html {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #BF8A35, #E5C78E, #BF8A35);
+    background: linear-gradient(90deg, #C9A962, #E8D5A3, #C9A962);
     transition: width 0.3s ease;
 }
 
@@ -105,7 +102,7 @@ html {
 
 /* Form focus states */
 input:focus, select:focus, textarea:focus {
-    box-shadow: 0 0 0 2px rgba(212, 164, 24, 0.2);
+    box-shadow: 0 0 0 2px rgba(201, 169, 98, 0.2);
 }
 
 /* Button press effect */
@@ -138,7 +135,7 @@ button:active {
 
 .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(212, 168, 75, 0.2);
+    box-shadow: 0 12px 40px rgba(201, 169, 98, 0.2);
 }
 
 /* Fade in animation */

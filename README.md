@@ -5,7 +5,7 @@ A sleek, modern landing page for The Syed Ashemi fitness coaching brand. Built w
 ## 🏛️ Features
 
 - **Responsive Design** - Looks great on all devices
-- **Dark Theme** - Black/white/gold Greek mythology vibe
+- **Dark Theme** - Black/white/gold Greek mythology vibe (inspired by architectarmy.com)
 - **Video Placeholder** - Ready for your intro video
 - **Before/After Sliders** - Interactive transformation galleries
 - **Application Form** - Submits to Google Sheets
@@ -56,10 +56,10 @@ Replace the placeholder divs in `index.html`:
 ```html
 <!-- Before: -->
 <div class="absolute inset-0 bg-zinc-800 flex items-center justify-center">
-    <div class="text-center">
-        <div class="text-6xl mb-2">📷</div>
-        <p class="text-gray-500">Before Photo</p>
-    </div>
+  <div class="text-center">
+    <div class="text-6xl mb-2">📷</div>
+    <p class="text-gray-500">Before Photo</p>
+  </div>
 </div>
 
 <!-- After: -->
@@ -82,12 +82,12 @@ Replace the video placeholder with an embed:
 
 ```html
 <div id="video-placeholder" class="aspect-video">
-    <iframe 
-        src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-        class="w-full h-full"
-        frameborder="0" 
-        allowfullscreen>
-    </iframe>
+  <iframe
+    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+    class="w-full h-full"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
 </div>
 ```
 
@@ -118,12 +118,12 @@ thesyedashemi/
     └── ...
 ```
 
-## 🎨 Color Palette
+## 🎨 Color Palette (architectarmy.com style)
 
 - **Black**: `#000000` - Background
-- **Zinc-900**: `#18181b` - Cards/sections
-- **Gold-500**: `#F9F295` - Primary accent
-- **Gold-600**: `#E5DE7A` - Buttons/CTAs
+- **Matte Card**: `#0A0A0A` - Cards/sections
+- **Gold-500**: `#C9A962` - Primary accent
+- **Gold-600**: `#B8954D` - Buttons/CTAs
 - **White**: `#ffffff` - Text
 - **Gray-300/400**: `#d1d5db/#9ca3af` - Secondary text
 
