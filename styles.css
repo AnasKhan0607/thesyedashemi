@@ -80,6 +80,75 @@ body {
     ) 1;
 }
 
+/* Animated thin gold line tracing around video border */
+@keyframes border-beam {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.video-glow-border {
+    position: relative;
+    overflow: hidden;
+    padding: 2px;
+    border-radius: 0.5rem;
+    background: rgba(201, 169, 98, 0.1);
+}
+
+.video-glow-border::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 88%,
+        #C9A962 93%,
+        #E8D5A3 95%,
+        #C9A962 97%,
+        transparent 100%
+    );
+    animation: border-beam 4s linear infinite;
+    z-index: 0;
+}
+
+.video-glow-border > div {
+    position: relative;
+    z-index: 1;
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
+
+/* About section card flip */
+.about-flip-container {
+    perspective: 1200px;
+}
+
+.about-flip-card {
+    position: relative;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.about-flip-container.flipped .about-flip-card {
+    transform: rotateY(180deg);
+}
+
+.about-flip-front,
+.about-flip-back {
+    backface-visibility: hidden;
+}
+
+.about-flip-back {
+    transform: rotateY(180deg);
+}
+
 /* Transformation slider styles */
 .transformation-slider {
     touch-action: none;
@@ -226,12 +295,14 @@ button:disabled {
     background: #C9A962;
 }
 
-.transformations-swiper .swiper-button-next,
-.transformations-swiper .swiper-button-prev {
-    color: #C9A962;
+/* Custom external nav arrows */
+.transform-prev,
+.transform-next {
+    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.6);
 }
 
-.transformations-swiper .swiper-button-next:after,
-.transformations-swiper .swiper-button-prev:after {
-    font-size: 24px;
+.transform-prev:hover,
+.transform-next:hover {
+    background: #C9A962;
 }
