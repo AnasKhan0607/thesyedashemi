@@ -48,36 +48,55 @@ document.addEventListener('DOMContentLoaded', function() {
         const startDrag = (e) => {
             isDragging = true;
             e.preventDefault();
+            e.stopPropagation();
         };
-        
+
         const doDrag = (e) => {
             if (!isDragging) return;
-            
-            const x = e.type.includes('touch') 
-                ? e.touches[0].clientX 
+            e.preventDefault();
+            e.stopPropagation();
+
+            const x = e.type.includes('touch')
+                ? e.touches[0].clientX
                 : e.clientX;
-            
+
             updateSlider(x);
         };
-        
+
         const stopDrag = () => {
             isDragging = false;
         };
-        
-        // Mouse events
+
+        // Mouse events on handle
         handle.addEventListener('mousedown', startDrag);
-        document.addEventListener('mousemove', doDrag);
-        document.addEventListener('mouseup', stopDrag);
-        
-        // Touch events
-        handle.addEventListener('touchstart', startDrag);
-        document.addEventListener('touchmove', doDrag);
-        document.addEventListener('touchend', stopDrag);
-        
-        // Click to move
-        container.addEventListener('click', (e) => {
+        // Mouse events on container for click-to-position
+        container.addEventListener('mousedown', (e) => {
+            if (e.target === handle || handle.contains(e.target)) return;
+            isDragging = true;
+            updateSlider(e.clientX);
+            e.stopPropagation();
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
             updateSlider(e.clientX);
         });
+        document.addEventListener('mouseup', stopDrag);
+
+        // Touch events on handle
+        handle.addEventListener('touchstart', startDrag, { passive: false });
+        container.addEventListener('touchstart', (e) => {
+            if (e.target === handle || handle.contains(e.target)) return;
+            isDragging = true;
+            updateSlider(e.touches[0].clientX);
+            e.stopPropagation();
+        }, { passive: false });
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            updateSlider(e.touches[0].clientX);
+        }, { passive: false });
+        document.addEventListener('touchend', stopDrag);
     });
 
     // =========================================
@@ -108,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: formData.get('name'),
                 email: formData.get('email'),
                 instagram: formData.get('instagram'),
+                phone: formData.get('phone'),
                 fitness_level: formData.get('fitness_level'),
                 goal: formData.get('goal'),
                 message: formData.get('message') || ''

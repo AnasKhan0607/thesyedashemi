@@ -10,9 +10,10 @@
  *    B1: Name
  *    C1: Email
  *    D1: Instagram
- *    E1: Fitness Level
- *    F1: Goal
- *    G1: Message
+ *    E1: Phone
+ *    F1: Fitness Level
+ *    G1: Goal
+ *    H1: Message
  * 
  * 4. Go to Extensions > Apps Script
  * 5. Delete any code in the editor and paste this entire script
@@ -64,6 +65,7 @@ function doPost(e) {
       data.name || '',
       data.email || '',
       data.instagram || '',
+      data.phone || '',
       data.fitness_level || '',
       data.goal || '',
       data.message || ''

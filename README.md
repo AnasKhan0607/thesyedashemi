@@ -1,137 +1,186 @@
-# The Syed Ashemi - Online Fitness Coaching Website
+# The Syed Ashemi - Coaching Website
 
-A sleek, modern landing page for The Syed Ashemi fitness coaching brand. Built with a Greek god/Hercules aesthetic featuring black, white, and gold colors.
+## Setup
 
-## 🏛️ Features
+### Clone & Run
 
-- **Responsive Design** - Looks great on all devices
-- **Dark Theme** - Black/white/gold Greek mythology vibe (inspired by architectarmy.com)
-- **Video Placeholder** - Ready for your intro video
-- **Before/After Sliders** - Interactive transformation galleries
-- **Application Form** - Submits to Google Sheets
-- **Smooth Animations** - Fade-ins and hover effects
-- **Social Links** - Instagram, TikTok, Twitter, YouTube
+```bash
+git clone https://github.com/YOUR_USERNAME/thesyedashemi.git
+cd thesyedashemi
+```
 
-## 🚀 Quick Start
+**Mac/Linux:**
+```bash
+python3 -m http.server 8080
+```
 
-### Local Preview
+**Windows:**
+```bash
+python -m http.server 8080
+```
 
-Just open `index.html` in your browser - no build step required!
+Open **http://localhost:8080** in your browser.
 
 ### Deploy
 
-Deploy to any static hosting:
-
-- **GitHub Pages** - Push to `gh-pages` branch
-- **Netlify** - Drag and drop the folder
-- **Vercel** - Import the repo
-- **Cloudflare Pages** - Connect your repo
-
-## 📋 Setup Google Sheets Integration
-
-1. Create a new Google Spreadsheet
-2. Add headers in row 1:
-   - A1: `Timestamp`
-   - B1: `Name`
-   - C1: `Email`
-   - D1: `Instagram`
-   - E1: `Fitness Level`
-   - F1: `Goal`
-   - G1: `Message`
-3. Go to **Extensions > Apps Script**
-4. Paste the contents of `google-apps-script.js`
-5. Click **Deploy > New deployment**
-6. Choose **Web app**
-7. Set **Execute as**: Me
-8. Set **Who has access**: Anyone
-9. Copy the deployment URL
-10. Replace `YOUR_GOOGLE_APPS_SCRIPT_URL_HERE` in `script.js` with your URL
-
-## ✏️ Customization
-
-### Add Your Photos
-
-Replace the placeholder divs in `index.html`:
-
-```html
-<!-- Before: -->
-<div class="absolute inset-0 bg-zinc-800 flex items-center justify-center">
-  <div class="text-center">
-    <div class="text-6xl mb-2">📷</div>
-    <p class="text-gray-500">Before Photo</p>
-  </div>
-</div>
-
-<!-- After: -->
-<img src="images/client1-before.jpg" alt="Before transformation" class="absolute inset-0 w-full h-full object-cover">
-```
-
-### Update Testimonials
-
-Edit the testimonial text in the transformation cards:
-
-```html
-<p class="text-gray-300 italic mb-4">"Your actual client testimonial here."</p>
-<p class="text-gold-500 font-semibold">— Actual Client Name</p>
-<p class="text-gray-500 text-sm">12 Week Transformation</p>
-```
-
-### Add Your Video
-
-Replace the video placeholder with an embed:
-
-```html
-<div id="video-placeholder" class="aspect-video">
-  <iframe
-    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-    class="w-full h-full"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
-```
-
-### Update Stats
-
-Edit the numbers in the hero section stats grid.
-
-### Set Workout Plan Price
-
-Update the `$XX` placeholders in the Programs section.
-
-### Update Social Links
-
-Edit the `href` attributes for Twitter and YouTube when ready.
-
-## 📁 File Structure
-
-```
-thesyedashemi/
-├── index.html              # Main landing page
-├── styles.css              # Custom CSS styles
-├── script.js               # JavaScript (form, sliders, etc.)
-├── google-apps-script.js   # Google Sheets integration code
-├── README.md               # This file
-└── images/                 # Add your images here
-    ├── transformations/
-    ├── about/
-    └── ...
-```
-
-## 🎨 Color Palette (architectarmy.com style)
-
-- **Black**: `#000000` - Background
-- **Matte Card**: `#0A0A0A` - Cards/sections
-- **Gold-500**: `#C9A962` - Primary accent
-- **Gold-600**: `#B8954D` - Buttons/CTAs
-- **White**: `#ffffff` - Text
-- **Gray-300/400**: `#d1d5db/#9ca3af` - Secondary text
-
-## 📱 Socials
-
-- Instagram: [@thesyedashemi](https://www.instagram.com/thesyedashemi/)
-- TikTok: [@thesyedashemi](https://www.tiktok.com/@thesyedashemi)
+Push to any static host: GitHub Pages, Netlify, Vercel, or Cloudflare Pages.
 
 ---
 
-Built with 💪 by The Syed Ashemi
+## Google Sheets (Form Submissions)
+
+1. Create a Google Spreadsheet with headers in row 1:
+   `Timestamp | Name | Email | Instagram | Phone | Fitness Level | Goal | Message`
+2. Go to **Extensions > Apps Script**, paste contents of `google-apps-script.js`
+3. **Deploy > New deployment** > Web app > Execute as: Me > Access: Anyone
+4. Copy the URL and paste it in `script.js` on this line:
+
+```js
+const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+```
+
+5. Test it by submitting the form on your site — check the Google Sheet for a new row
+
+---
+
+## Before Making Any Changes
+
+1. Make a new branch:
+```bash
+git branch your-branch-name
+```
+2. Go into that branch:
+```bash
+git checkout your-branch-name
+```
+3. Make your changes to the code
+4. Stage and commit:
+```bash
+git add .
+git commit -m "describe what you changed"
+```
+5. Push the branch to GitHub:
+```bash
+git push origin your-branch-name
+```
+6. Go to GitHub and create a **Pull Request** to merge into `master`
+7. Review it, then click **Merge**
+
+---
+
+## Adding Your Video
+
+### Option 1: Local MP4 file (recommended)
+
+1. Drop your video file into the project folder (e.g. `video/intro.mp4`)
+2. Open `index.html` and search for `id="video-placeholder"`
+3. Replace everything inside that div with:
+
+```html
+<div class="aspect-video" id="video-placeholder">
+    <video class="w-full h-full object-cover" controls playsinline>
+        <source src="video/intro.mp4" type="video/mp4">
+    </video>
+</div>
+```
+
+### Option 2: YouTube embed
+
+1. Copy the video ID from the URL (the part after `v=`)
+2. Open `index.html` and search for `id="video-placeholder"`
+3. Replace everything inside that div with:
+
+```html
+<div class="aspect-video" id="video-placeholder">
+    <iframe
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        class="w-full h-full"
+        frameborder="0"
+        allowfullscreen>
+    </iframe>
+</div>
+```
+
+---
+
+## Adding / Removing Transformation Clients
+
+All client images go in `images/transformations/`. Name them `ClientX_Before.jpg` and `ClientX_After.jpg`.
+
+### Add a new client
+
+Copy an existing slide block in `index.html` (search for `<!-- Slide`) and update:
+
+```html
+<div class="swiper-slide">
+    <div class="bg-matte-card border border-gold-500/20 rounded-lg overflow-hidden">
+        <div class="relative">
+            <div class="transformation-slider aspect-[4/5] relative overflow-hidden">
+                <div class="slider-container swiper-no-swiping relative w-full h-full">
+                    <!-- Base image (right side) -->
+                    <img src="images/transformations/Client6_After.jpg" alt="Client 6 After" class="absolute inset-0 w-full h-full object-cover">
+                    <!-- Overlay image (left side) -->
+                    <div class="slider-after absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+                        <img src="images/transformations/Client6_Before.jpg" alt="Client 6 Before" class="w-full h-full object-cover">
+                    </div>
+                    <div class="slider-handle absolute top-0 bottom-0 w-1 bg-gold-500 cursor-ew-resize" style="left: 50%;">
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-gold-500 rounded-full flex items-center justify-center shadow-lg">
+                            <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"></path></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute top-4 left-4 bg-matte-dark/90 px-3 py-1 rounded text-sm font-semibold">BEFORE</div>
+            <div class="absolute top-4 right-4 bg-gold-500 px-3 py-1 rounded text-sm font-semibold text-black">AFTER</div>
+        </div>
+        <div class="p-4 text-center">
+            <div class="text-gold-500 text-lg mb-2">★★★★★</div>
+            <p class="text-gold-500 font-semibold">X Week Transformation</p>
+        </div>
+    </div>
+</div>
+```
+
+Change the image paths and week count.
+
+### Remove a client
+
+Delete the entire `<div class="swiper-slide">...</div>` block for that client.
+
+---
+
+## Saving & Pushing Changes
+
+After making any changes:
+
+1. Open your terminal and `cd` into the project folder
+2. Check what you changed:
+```bash
+git status
+```
+3. Stage your changes:
+```bash
+git add .
+```
+4. Commit with a short message describing what you did:
+```bash
+git commit -m "added new client transformation"
+```
+5. Push to GitHub:
+```bash
+git push
+```
+
+---
+
+## File Structure
+
+```
+thesyedashemi/
+├── index.html              # Main page
+├── styles.css              # Styles
+├── script.js               # JS (form, sliders)
+├── google-apps-script.js   # Google Sheets script
+├── README.md               # This file
+└── images/transformations/ # Client photos
+```
