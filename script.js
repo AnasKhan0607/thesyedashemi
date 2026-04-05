@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitSpinner = document.getElementById('submit-spinner');
     
     // Google Sheets Web App URL - Replace with your deployment URL
-    const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwBxgZGiLu4neP_Stja5vjjUKjrx-ZRB0PNYKlr9rzG-2_fvWXtJd5dQVGEHqiuq3XdIw/exec';
     
     if (form) {
         form.addEventListener('submit', async (e) => {
