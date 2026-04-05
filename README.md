@@ -168,7 +168,7 @@ git commit -m "added new client transformation"
 ```
 5. Push to GitHub:
 ```bash
-git push
+git push -u origin redesignV1
 ```
 
 ---
