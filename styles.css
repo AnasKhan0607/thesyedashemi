@@ -149,6 +149,19 @@ body {
     transform: rotateY(180deg);
 }
 
+/* Testimonial cards always golden glow */
+.testimonial-card {
+    position: relative;
+    border-color: rgba(201, 169, 98, 0.5) !important;
+    box-shadow: 0 0 15px rgba(201, 169, 98, 0.2), 0 0 30px rgba(201, 169, 98, 0.08);
+}
+
+.testimonial-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
 /* Transformation slider styles */
 .transformation-slider {
     touch-action: none;
