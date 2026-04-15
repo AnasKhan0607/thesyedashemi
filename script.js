@@ -110,6 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Google Sheets Web App URL - Replace with your deployment URL
     const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwBxgZGiLu4neP_Stja5vjjUKjrx-ZRB0PNYKlr9rzG-2_fvWXtJd5dQVGEHqiuq3XdIw/exec';
+    // Must match SHARED_SECRET in google-apps-script.js
+    const SHARED_SECRET = 'ta-sh-9f3kq2p7xm';
     
     if (form) {
         form.addEventListener('submit', async (e) => {
@@ -130,7 +132,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 phone: formData.get('phone'),
                 fitness_level: formData.get('fitness_level'),
                 goal: formData.get('goal'),
-                message: formData.get('message') || ''
+                message: formData.get('message') || '',
+                website: formData.get('website') || '',
+                secret: SHARED_SECRET
             };
             
             try {

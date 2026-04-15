@@ -31,6 +31,29 @@
 // The name of your sheet (tab) - default is "Sheet1"
 const SHEET_NAME = 'Sheet1';
 
+// Must match SHARED_SECRET in script.js
+const SHARED_SECRET = 'ta-sh-9f3kq2p7xm';
+
+// Rate limit: max submissions per fingerprint per window
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_SECONDS = 3600; // 1 hour
+
+// Max field lengths (reject longer submissions)
+const MAX_FIELD_LENGTH = 500;
+const MAX_MESSAGE_LENGTH = 2000;
+
+/**
+ * Strip CSV-injection prefixes so formulas don't execute when the sheet is opened/exported.
+ * Also trims and caps length.
+ */
+function sanitize(value, maxLength) {
+  if (value === null || value === undefined) return '';
+  let s = String(value).trim();
+  if (s.length > maxLength) s = s.substring(0, maxLength);
+  if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;
+  return s;
+}
+
 /**
  * Handle POST requests from the website form
  */
@@ -38,62 +61,85 @@ function doPost(e) {
   try {
     // Parse the incoming JSON data
     const data = JSON.parse(e.postData.contents);
-    
+
+    // --- Security checks ---
+
+    // 1. Shared secret check — rejects blind POSTs that don't come from our site's JS
+    if (data.secret !== SHARED_SECRET) {
+      return jsonResponse({ status: 'success', message: 'Application received!' });
+    }
+
+    // 2. Honeypot — bots fill hidden fields; humans don't
+    if (data.website && String(data.website).trim() !== '') {
+      return jsonResponse({ status: 'success', message: 'Application received!' });
+    }
+
+    // 3. Rate limit by a fingerprint (email + name). CacheService is per-script, free.
+    const fingerprint = (String(data.email || '') + '|' + String(data.name || '')).toLowerCase();
+    const cache = CacheService.getScriptCache();
+    const key = 'rl_' + Utilities.base64EncodeWebSafe(fingerprint).substring(0, 80);
+    const current = parseInt(cache.get(key) || '0', 10);
+    if (current >= RATE_LIMIT_MAX) {
+      return jsonResponse({ status: 'success', message: 'Application received!' });
+    }
+    cache.put(key, String(current + 1), RATE_LIMIT_WINDOW_SECONDS);
+
+    // 4. Required fields
+    if (!data.name || !data.email) {
+      return jsonResponse({ status: 'error', message: 'Missing required fields' });
+    }
+
     // Get the active spreadsheet and sheet
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
-    
+
     if (!sheet) {
       throw new Error('Sheet not found: ' + SHEET_NAME);
     }
-    
+
     // Format the timestamp nicely
-    const timestamp = data.timestamp 
-      ? new Date(data.timestamp).toLocaleString('en-US', { 
+    const timestamp = data.timestamp
+      ? new Date(data.timestamp).toLocaleString('en-US', {
           timeZone: 'America/Toronto',
           dateStyle: 'medium',
           timeStyle: 'short'
         })
-      : new Date().toLocaleString('en-US', { 
+      : new Date().toLocaleString('en-US', {
           timeZone: 'America/Toronto',
           dateStyle: 'medium',
           timeStyle: 'short'
         });
-    
-    // Append a new row with the form data
+
+    // Append a sanitized row
     sheet.appendRow([
       timestamp,
-      data.name || '',
-      data.email || '',
-      data.instagram || '',
-      data.phone || '',
-      data.fitness_level || '',
-      data.goal || '',
-      data.message || ''
+      sanitize(data.name, MAX_FIELD_LENGTH),
+      sanitize(data.email, MAX_FIELD_LENGTH),
+      sanitize(data.instagram, MAX_FIELD_LENGTH),
+      sanitize(data.phone, MAX_FIELD_LENGTH),
+      sanitize(data.fitness_level, MAX_FIELD_LENGTH),
+      sanitize(data.goal, MAX_FIELD_LENGTH),
+      sanitize(data.message, MAX_MESSAGE_LENGTH)
     ]);
     
     // Send email notification (optional - uncomment if you want email alerts)
     // sendEmailNotification(data);
     
     // Return success response
-    return ContentService
-      .createTextOutput(JSON.stringify({ 
-        status: 'success', 
-        message: 'Application received!' 
-      }))
-      .setMimeType(ContentService.MimeType.JSON);
-      
+    return jsonResponse({ status: 'success', message: 'Application received!' });
+
   } catch (error) {
     // Log the error
     console.error('Error processing form:', error);
-    
+
     // Return error response
-    return ContentService
-      .createTextOutput(JSON.stringify({ 
-        status: 'error', 
-        message: error.toString() 
-      }))
-      .setMimeType(ContentService.MimeType.JSON);
+    return jsonResponse({ status: 'error', message: error.toString() });
   }
+}
+
+function jsonResponse(obj) {
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 /**
