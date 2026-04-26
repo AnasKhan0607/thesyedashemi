@@ -214,6 +214,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =========================================
+    // Testimonial Lightbox
+    // =========================================
+    const lightbox = document.getElementById('testimonial-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    if (lightbox && lightboxImg && lightboxClose) {
+        const openLightbox = (src, alt) => {
+            lightboxImg.src = src;
+            lightboxImg.alt = alt || '';
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+            lightboxImg.src = '';
+        };
+
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('img');
+                if (img) openLightbox(img.src, img.alt);
+            });
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightboxImg) return;
+            closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+    }
+
+    // =========================================
     // Intersection Observer for Animations
     // =========================================
     const observerOptions = {
